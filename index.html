@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>My first three.js app</title>
+		<style>
+			body { margin: 0; }
+            #Game{ position:absolute;}
+		</style>
+	</head>
+	<body>
+        <canvas id = "Game"></canvas>
+		<script type="importmap">
+            /*
+                https://github.com/mrdoob/three.js/tree/dev/examples/jsm
+                https://www.youtube.com/watch?v=pUgWfqWZWmM
+                https://threejs.org
+                https://3dtextures.me/tag/tiles/
+            */
+			{
+                "imports": {
+                    "three": "https://threejs.org/build/three.module.js",
+                    "three/stats":"https://threejs.org/examples/jsm/libs/stats.module.js",
+                    "three/OrbitControls":"https://threejs.org/examples/jsm/controls/OrbitControls.js",
+                    "three/gui":"https://threejs.org/examples/jsm/libs/lil-gui.module.min.js",
+                    "three/subdivide": "https://unpkg.com/three-subdivide@1.0.2/build/index.module.js",
+                    "three/OBJLoader": "https://threejs.org/examples/jsm/loaders/OBJLoader.js",
+                    "three/MTLLoader":"https://threejs.org/examples/jsm/loaders/MTLLoader.js",
+
+                    "three/animation/":"https://threejs.org/examples/jsm/animation/",
+                    "three/cameras/":"https://threejs.org/examples/jsm/cameras/",
+                    "three/capabilities/":"https://threejs.org/examples/jsm/capabilities/",
+                    "three/controls/":"https://threejs.org/examples/jsm/controls/",
+                    "three/csm/":"https://threejs.org/examples/jsm/csm/",
+                    "three/curves/":"https://threejs.org/examples/jsm/curves/",
+                    "three/effects/":"https://threejs.org/examples/jsm/effects/",
+                    "three/environments/":"https://threejs.org/examples/jsm/environments/",
+                    "three/exporters/":"https://threejs.org/examples/jsm/exporters/",
+                    "three/geometries/":"https://threejs.org/examples/jsm/geometries/",
+                    "three/helpers/":"https://threejs.org/examples/jsm/helpers/",
+                    "three/interactive/":"https://threejs.org/examples/jsm/interactive/",
+                    "three/libs/":"https://threejs.org/examples/jsm/libs/",
+                    "three/lights/":"https://threejs.org/examples/jsm/lights/",
+                    "three/lines/":"https://threejs.org/examples/jsm/lines/",
+                    "three/loaders/":"https://threejs.org/examples/jsm/loaders/",
+                    "three/materials/":"https://threejs.org/examples/jsm/materials/",
+                    "three/math/":"https://threejs.org/examples/jsm/math/",
+                    "three/misc/":"https://threejs.org/examples/jsm/misc/",
+                    "three/modifiers/":"https://threejs.org/examples/jsm/modifiers/",
+                    "three/node-editor/":"https://threejs.org/examples/jsm/node-editor/",
+                    "three/nodes/":"https://threejs.org/examples/jsm/nodes/",
+                    "three/objects/":"https://threejs.org/examples/jsm/objects/",
+                    "three/offscreen/":"https://threejs.org/examples/jsm/offscreen/",
+                    "three/physics/":"https://threejs.org/examples/jsm/physics/",
+                    "three/postprocessing/":"https://threejs.org/examples/jsm/postprocessing/",
+                    "three/renderers/":"https://threejs.org/examples/jsm/renderers/",
+                    "three/shaders/":"https://threejs.org/examples/jsm/shaders/",
+                    "three/textures/":"https://threejs.org/examples/jsm/textures/",
+                    "three/utils/":"https://threejs.org/examples/jsm/utils/",
+                    "three/webxr/":"https://threejs.org/examples/jsm/webxr/"
+                }   
+            }
+		</script>
+        <script type = "module" src = "./index.js"></script>
+	</body>
+</html>

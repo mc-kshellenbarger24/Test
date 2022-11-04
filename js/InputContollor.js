@@ -1,26 +1,33 @@
+
 export default class InputControllor{
     constructor(){
         this.Initialize()
+
     }
+    
     Initialize(){
         this.Current = {
             LeftButton:false,
             RightButton:false,
             MouseX:0,
-            MouseY:0,
-            MouseXDelta:0,
-            MouseYDelta:0
+            MouseY:0
         }
-        this.Previous =null;
         this.Keys = {}
-        this.PreviousKeys = {}
-        document.addEventListener("mousedown",(e) => this.OnMouseDown(e),false)
-        document.addEventListener("mouseup",(e) => this.OnMouseUp(e),false)
-        document.addEventListener("mousemove",(e) => this.OnMouseMove(e),false)
-        document.addEventListener("keydown",(e) => this.OnKeyDown(e),false)
-        document.addEventListener("keyup",(e) => this.OnKeyUp(e),false)
+        document.body.addEventListener("mousedown",(e) => this.OnMouseDown(e),false)
+        document.body.addEventListener("mouseup",(e) => this.OnMouseUp(e),false)
+        document.body.addEventListener("mousemove",(e) => this.OnMouseMove(e),false)
+        document.body.addEventListener("keydown",(e) => this.OnKeyDown(e),false)
+        document.body.addEventListener("keyup",(e) => this.OnKeyUp(e),false)
     }
+
+    key(KeyCode){
+        if(this.Keys != null){
+            return this.Keys[KeyCode]
+        }
+    }
+
     OnMouseDown(e){
+        document.body.requestPointerLock();
         switch (e.button){
             case 0:{
                 this.Current.LeftButton = true
@@ -32,6 +39,7 @@ export default class InputControllor{
             }
         }
     }
+    
     OnMouseUp(e){
         switch (e.button){
             case 0:{
@@ -44,23 +52,16 @@ export default class InputControllor{
             }
         }
     }
+
     OnMouseMove(e){
-        this.Current.MouseX = e.pageX - window.innerWidth / 2
-        this.Current.MouseY = e.pageY - window.innerHeight / 2
-        if(this.Previous === null){
-            this.Previous = {...this.Current}
-        }
-        this.Current.MouseXDelta = this.Current.MouseX - this.Previous.MouseX
-        this.Current.MouseYDelta = this.Current.MouseY - this.Previous.MouseY
-    }
-    OnKeyDown(e){
-        this.Keys[e.keyCode] = true
-    }
-    OnKeyUp(e){
-        this.Keys[e.keyCode] = false
-    }
-    Update(){
-        this.Previous = {...this.current}
+        this.Current.MouseX = e.movementX
+        this.Current.MouseY = e.movementY
     }
 
+    OnKeyDown(e){
+        this.Keys[e.key] = true
+    }
+    OnKeyUp(e){
+        this.Keys[e.key] = false
+    }
 }
